@@ -1,1 +1,1 @@
-<h2>SITEBAR</h2>
+<h2>Sidebar</h2>

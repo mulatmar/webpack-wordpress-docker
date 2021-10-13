@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+
+  db:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: wp
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8001:80
+    environment:
+      MYSQL_ROOT_PASSOWRD: test
+
+  app:
+    container_name: wordpress
+    build:
+      context: ./docker/wordpress/
+      dockerfile: wordpress.Dockerfile
+    depends_on:
+      - db
+    links:
+      - db:mysql
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - ./wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_NAME: wp
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: test
+      WORDPRESS_DEBUG: 1
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+

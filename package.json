@@ -1,0 +1,59 @@
+{
+  "name": "docker-webpack-wordpress",
+  "version": "1.0.1",
+  "author": "Seranking",
+  "license": "MIT",
+  "scripts": {
+    "docker": "docker-compose up",
+    "down": "docker-compose down",
+    "dev": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.js",
+    "prod": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js",
+    "dump": "node ./config/mysqldump.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-env": "^7.13.15",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "clean-webpack-plugin": "4.0.0-alpha.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "core-js": "^3.10.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.2.4",
+    "cssnano": "^5.0.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "mysqldump": "^3.2.0",
+    "postcss": "^8.2.10",
+    "postcss-loader": "^5.2.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.11",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.34.0",
+    "webpack-bundle-analyzer": "^4.4.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
+  }
+}

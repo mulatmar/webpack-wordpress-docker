@@ -337,7 +337,7 @@ INSERT INTO
     `autoload`
   )
 VALUES
-  (6, 'admin_email', 'mulatmar@mail.ru', 'yes');
+  (6, 'admin_email', 'mail@mail.com', 'yes');
 INSERT INTO
   `wp_options` (
     `option_id`,
@@ -2260,7 +2260,7 @@ VALUES
     'admin',
     '$P$BofZs.Mc1F0WHCmNT99oEiBx7lnNb8.',
     'admin',
-    'mulatmar@mail.ru',
+    'mail@mail.com',
     'http://localhost',
     '2021-10-13 14:24:06',
     '',
